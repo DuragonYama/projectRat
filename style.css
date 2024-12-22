@@ -1,0 +1,99 @@
+html {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #e0cccc;
+    font-family: 'Arial', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    text-align: center;
+    margin: 0;
+    overflow: hidden;
+}
+
+.rat-container {
+    background-color: #fff;
+    padding: 20px;
+    border: 2px dashed #4e342e;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.title {
+    font-size: 2.5rem;
+    color: #4e342e;
+}
+
+.subtitle {
+    font-size: 1.2rem;
+    color: #6d4c41;
+}
+
+.rat-image {
+    width: 150px;
+    margin: 15px 0;
+}
+
+.tease {
+    font-size: 1rem;
+    color: #5d4037;
+    margin-top: 10px;
+}
+
+/* CHATGPT */
+
+/* Rat runner with rotation based on direction */
+.rat-runner {
+    position: absolute;
+    top: 0;
+    left: 0;
+    pointer-events: none; /* Prevents interaction with the rat while running */
+    animation: runAround 5s infinite linear; /* Normal animation speed */
+}
+
+.running-rat {
+    width: 50px;
+    position: relative;
+    transition: transform 0.1s ease; /* Smooth transition for rotation */
+}
+
+/* Rotate when moving right */
+@keyframes runAround {
+    0% {
+        top: 0;
+        left: 0;
+        transform: rotate(0deg); /* Facing right */
+    }
+    25% {
+        top: 100%;
+        left: 50%;
+        transform: rotate(90deg); /* Turning downwards */
+    }
+    50% {
+        top: 0;
+        left: 100%;
+        transform: rotate(180deg); /* Facing left */
+    }
+    75% {
+        top: 50%;
+        left: 50%;
+        transform: rotate(270deg); /* Turning upwards */
+    }
+    100% {
+        top: 0;
+        left: 0;
+        transform: rotate(0deg); /* Facing right again */
+    }
+}
+
+/* Increase speed on hover */
+.rat-runner:hover {
+    animation-duration: 2s; /* Faster movement */
+}
+
+/* Optional: Adjust the rat's speed or other effects in JS (if needed) */
+
